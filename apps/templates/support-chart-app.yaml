@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ .Values.destination.namespace }}
+    namespace: {{ .Values.spec.destination.namespace }}
   project: {{ .Values.project }}
   source:
     repoURL: {{ .Values.source.repoURL }}
