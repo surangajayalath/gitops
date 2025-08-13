@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: "{{ .Values.spec.source.path }}"
+    path: "{{ .Values.spec.source.path }}/charts/kubernetes-dashboard"
     # helm:
     #   valueFiles:
     #     - values.yaml
