@@ -6,5 +6,5 @@ spec:
     targetRevision: main
     path: "apps"
 metadata:
-  namespace: argocd
+  namespace: devops
   project: support-chart-project
