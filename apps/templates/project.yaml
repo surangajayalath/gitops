@@ -9,7 +9,7 @@ spec:
     - namespace: '*'
       server: https://kubernetes.default.svc
   sourceRepos:
-    - '*'
+    - 'https://github.com/surangajayalath/gitops'
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
@@ -17,3 +17,4 @@ spec:
     - group: ''
       kind: 'Secret'
   syncWindows: []
+  
