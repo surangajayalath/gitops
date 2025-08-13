@@ -9,9 +9,9 @@ spec:
     namespace: {{ .Values.spec.destination.namespace }}
   project: {{ .Values.project }}
   source:
-    repoURL: {{ .Values.source.repoURL }}
-    targetRevision: {{ .Values.source.targetRevision }}
-    path: {{ .Values.source.path }}
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: {{ .Values.spec.source.path }}
   syncPolicy:
     automated:
       prune: true
