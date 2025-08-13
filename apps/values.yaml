@@ -7,4 +7,5 @@ spec:
     path: "apps"
 metadata:
   namespace: devops
-  project: support-chart-project
+  project: devops
+  
