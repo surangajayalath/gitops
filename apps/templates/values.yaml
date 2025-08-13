@@ -4,7 +4,7 @@ spec:
   source:
     repoURL: 'https://github.com/surangajayalath/gitops.git'
     targetRevision: main
-    path: 'apps'
+    path: "apps"
 metadata:
   namespace: argocd
   project: support-chart-project
