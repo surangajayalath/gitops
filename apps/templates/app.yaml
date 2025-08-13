@@ -17,7 +17,7 @@ spec:
     #       value: "2"
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: default
+    namespace: {{ .Values.metadata.namespace }}
   syncPolicy:
     automated:
       prune: true
