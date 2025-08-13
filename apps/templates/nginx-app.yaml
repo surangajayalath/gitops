@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-app
+  namespace: {{ .Values.metadata.namespace }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: {{ .Values.metadata.namespace }}
+  project: devops
+  source:
+    path: "{{ .Values.spec.source.path }}/charts/nginx"
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+    # helm:
+    #   valueFiles:
+    #     - values.yaml
+    #   parameters:
+    #     - name: replicaCount
+    #       value: "2"
+
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
