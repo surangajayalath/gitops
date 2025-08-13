@@ -9,4 +9,4 @@ spec:
 metadata:
   name: support-chart
   namespace: argocd
-  project: support-chart-prj
+project: support-chart-prj
