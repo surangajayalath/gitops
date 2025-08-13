@@ -1,7 +1,7 @@
-nginx:
+reloader:
   image:
-    repository: bitnami/nginx
-    tag: 21.1.4
+    repository: stakater/reloader
+    tag: 2.2.0
   service:
     enabled: true
     type: ClusterIP
