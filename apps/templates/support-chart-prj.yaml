@@ -2,10 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: support-chart-prj
+  namespace: argocd
 spec:
   sourceRepos: ['*']
-  sourceNamespaces: ['*']
-  destinations: ['*']
+  destinations:
+    - namespace: '*'
+      server: '*'
   namespaceResourceBlacklist:
-  - group: '*'
-    kind: '*'
+    - group: '*'
+      kind: '*'
