@@ -1,8 +1,0 @@
-kubernetes-dashboard:
-  kong:
-    enabled: false
-  app:
-    image:
-      pullSecrets:
-        - dockerhub
-        - xxx
