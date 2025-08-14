@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubernetes-dashboard
+  namespace: devops
+  # finalizers:
+  #   - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: devops
+  project: devops
+  source:
+    path: "apps/charts/kubernetes-dashboard"
+    repoURL: "https://github.com/surangajayalath/gitops.git"
+    targetRevision: main
+    # helm:
+    #   valueFiles:
+    #     - values.yaml
+    #   parameters:
+    #     - name: replicaCount
+    #       value: "2"
+
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
