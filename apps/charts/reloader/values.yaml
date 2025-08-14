@@ -1,6 +1,7 @@
 reloader:
   image:
     repository: stakater/reloader
+    tag: v1.4.6
   service:
     enabled: true
     type: ClusterIP
