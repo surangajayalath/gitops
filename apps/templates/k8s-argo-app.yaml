@@ -15,13 +15,9 @@ spec:
     helm:
       valueFiles:
         - "values.yaml"
-      # parameters:
-      #   - name: replicaCount
-      #     value: "2"
-
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: true
+  syncPolicy: {}
+    # automated:
+    #   prune: false
+    #   selfHeal: true
     syncOptions:
       - CreateNamespace=true

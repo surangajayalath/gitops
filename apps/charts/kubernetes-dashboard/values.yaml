@@ -1,6 +1,6 @@
 kubernetes-dashboard:
-  # kong:
-  #   enabled: false
+  kong:
+    enabled: false
   app:
     image:
       pullSecrets:
