@@ -1,3 +1,7 @@
 cluster-autoscaler:
   autoDiscovery:
     clusterName: minikube
+  fullnameOverride: support-aws-cluster-autoscaler
+
+
+fullnameOverride: support-aws-cluster-autoscaler
