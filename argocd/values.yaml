@@ -1,4 +1,4 @@
-my-redis:
+redis:
   global:
     architecture: standalone   # or "replication"
     auth:

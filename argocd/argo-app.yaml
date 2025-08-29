@@ -8,7 +8,7 @@ spec:
   sources:
     # Source 1: Bitnami Helm chart (pinned version)
     - repoURL: https://charts.bitnami.com/bitnami
-      chart: my-redis
+      chart: redis
       targetRevision: 22.0.0
     # Source 2: Your GitHub repo with values.yaml
     - repoURL: https://github.com/surangajayalath/gitops.git
