@@ -1,6 +1,6 @@
 # values.yaml
 architecture: standalone   # or "replication"
-
+nameOverride: my-redis-master
 auth:
   enabled: true
   password: mysecretpassword  # set your own password
