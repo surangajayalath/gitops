@@ -7,6 +7,9 @@ global:
 
 fullnameOverride: "redis-server-dev"
 
+commonLabels: 
+  app.kubernetes.io/instance: my-redis-server-dev
+  
 master:
   count: 1
   persistence:
