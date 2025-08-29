@@ -1,13 +1,12 @@
-redis:
+my-redis:
   global:
     architecture: standalone   # or "replication"
     auth:
       enabled: true
       password: mysecretpassword  # set your own password
   
-  fullnameOverride: "my-redis-master"
-  nameOverride: "my-redis-master1"
-
+  fullnameOverride: "redis-server-dev"
+  
   master:
     count: 1
     persistence:
@@ -23,7 +22,6 @@ redis:
     service:
       type: ClusterIP
       port: 6379
-
   replica:
     replicaCount: 1
     persistence:
