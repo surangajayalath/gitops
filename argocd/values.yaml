@@ -1,10 +1,11 @@
 redis:
-  # values.yaml
-  architecture: standalone   # or "replication"
+  global:
+    architecture: standalone   # or "replication"
+    auth:
+      enabled: true
+      password: mysecretpassword  # set your own password
+  
   fullnameOverride: "my-redis-master"
-  auth:
-    enabled: true
-    password: mysecretpassword  # set your own password
 
   master:
     persistence:
