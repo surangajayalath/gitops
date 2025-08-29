@@ -1,34 +1,35 @@
-# values.yaml
-architecture: standalone   # or "replication"
-fullnameOverride: "my-redis-master"
-auth:
-  enabled: true
-  password: mysecretpassword  # set your own password
-
-master:
-  persistence:
+redis:
+  # values.yaml
+  architecture: standalone   # or "replication"
+  fullnameOverride: "my-redis-master"
+  auth:
     enabled: true
-    size: 2Gi
-  resources:
-    requests:
-      cpu: 100m
-      memory: 256Mi
-    limits:
-      cpu: 500m
-      memory: 512Mi
-  service:
-    type: ClusterIP
-    port: 6379
+    password: mysecretpassword  # set your own password
 
-replica:
-  replicaCount: 2
-  persistence:
-    enabled: true
-    size: 2Gi
-  resources:
-    requests:
-      cpu: 100m
-      memory: 256Mi
-    limits:
-      cpu: 500m
-      memory: 512Mi
+  master:
+    persistence:
+      enabled: true
+      size: 2Gi
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
+    service:
+      type: ClusterIP
+      port: 6379
+
+  replica:
+    replicaCount: 2
+    persistence:
+      enabled: true
+      size: 2Gi
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
