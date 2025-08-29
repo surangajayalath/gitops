@@ -1,0 +1,36 @@
+
+global:
+  architecture: standalone   # or "replication"
+  auth:
+    enabled: true
+    password: mysecretpassword  # set your own password
+
+fullnameOverride: "redis-server-dev"
+
+master:
+  count: 1
+  persistence:
+    enabled: true
+    size: 2Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+  service:
+    type: ClusterIP
+    port: 6379
+replica:
+  replicaCount: 1
+  persistence:
+    enabled: true
+    size: 2Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
