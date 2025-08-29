@@ -10,13 +10,15 @@ spec:
     - repoURL: https://charts.bitnami.com/bitnami
       chart: redis
       targetRevision: 22.0.0
+      helm:
+        valueFiles:
+          - $values/argocd/values.yaml   # reference values.yaml from second source
+
     # Source 2: Your GitHub repo with values.yaml
     - repoURL: https://github.com/surangajayalath/gitops.git
       targetRevision: main        # branch or tag
-      path: argocd          # folder in your repo containing values.yaml
-      helm:
-        valuesFiles:
-          - values.yaml
+      path: argocd                # folder in your repo containing values.yaml
+      ref: values                 # <-- give it a name to reference
   destination:
     server: https://kubernetes.default.svc
     namespace: redis
