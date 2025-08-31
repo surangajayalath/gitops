@@ -27,8 +27,8 @@ kyverno:
   #       - apiGroups: ["coordination.k8s.io"]
   #         resources: ["leases"]
   #         verbs: ["get", "create", "update"]
-  # upgrade:
-  #   fromV2: true
+  upgrade:
+    fromV2: true
   config: 
     webhooks:
       namespaceSelector:
