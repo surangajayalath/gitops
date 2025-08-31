@@ -1,4 +1,26 @@
-cluster-autoscaler:
-  autoDiscovery:
-    clusterName: minikube
-  fullnameOverride: support-aws-cluster-autoscaler
+kyverno:
+  replicaCount: 3
+  # health:
+  #   enabled: true
+  # admissionController:
+  #   rbac:
+  #     create: true
+  #   serviceAccount:
+  #     create: true
+  #   clusterRole:
+  #     extraRules:
+  #       - apiGroups: ["coordination.k8s.io"]
+  #         resources: ["leases"]
+  #         verbs: ["get", "create", "update"]
+  # upgrade:
+  #   fromV2: true
+  # config: 
+  #   webhooks:
+  #     namespaceSelector:
+  #       matchExpressions:
+  #       - key: kubernetes.io/metadata.name
+  #         operator: NotIn
+  #         values:
+  #         - kyverno
+  #         - kube-system
+  #         - system
