@@ -4,6 +4,16 @@ kyverno:
     annotations: 
       argocd.argoproj.io/sync-options: Replace=true
       strategy.spinnaker.io/replace: 'true'
+# Cleanup controller configuration
+# cleanupController:
+#   enabled: true
+#   rbac:
+#     create: true
+#     serviceAccount:
+#       name:
+#       annotations: {}
+#     clusterRole:
+#       extraResources: []
   # health:
   #   enabled: true
   # admissionController:
@@ -18,13 +28,14 @@ kyverno:
   #         verbs: ["get", "create", "update"]
   # upgrade:
   #   fromV2: true
-  # config: 
-  #   webhooks:
-  #     namespaceSelector:
-  #       matchExpressions:
-  #       - key: kubernetes.io/metadata.name
-  #         operator: NotIn
-  #         values:
-  #         - kyverno
-  #         - kube-system
-  #         - system
+  config: 
+    webhooks:
+      namespaceSelector:
+        matchExpressions:
+        - key: kubernetes.io/metadata.name
+          operator: NotIn
+          values:
+          - kyverno
+          - kube-system
+          - system
+          - devops
