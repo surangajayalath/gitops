@@ -1,5 +1,10 @@
 kyverno:
   replicaCount: 3
+  installCRDs: true
+  crds:
+    annotations: 
+      argocd.argoproj.io/sync-options: Replace=true
+      strategy.spinnaker.io/replace: 'true'
   # health:
   #   enabled: true
   # admissionController:
