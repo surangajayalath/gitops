@@ -6,6 +6,6 @@ spec:
     targetRevision: main
     path: "apps"
 metadata:
-  namespace: devops
+  namespace: kyverno
   project: default
   
