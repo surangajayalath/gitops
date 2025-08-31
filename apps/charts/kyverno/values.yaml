@@ -1,5 +1,4 @@
 kyverno:
-  replicaCount: 2
   installCRDs: true
   crds:
     annotations: 
