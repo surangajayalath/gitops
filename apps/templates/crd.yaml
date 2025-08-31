@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: https://github.com/kyverno/kyverno.git
     targetRevision: main
-    path: config/release
+    path: config/crds/kyverno
     directory:
       recurse: true
-      include: crds.yaml
+      include: kyverno.io_clusterpolicies.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kyverno
