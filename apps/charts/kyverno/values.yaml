@@ -2,8 +2,6 @@ kyverno:
   installCRDs: true
   crds:
     install: true
-    reportsServer:
-      enabled: true
     annotations: 
       argocd.argoproj.io/sync-options: Replace=true
       strategy.spinnaker.io/replace: 'true'
