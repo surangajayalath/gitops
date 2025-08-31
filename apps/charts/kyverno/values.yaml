@@ -1,5 +1,4 @@
 kyverno:
-  replicaCount: 3
   installCRDs: true
   crds:
     annotations: 
@@ -7,7 +6,8 @@ kyverno:
       strategy.spinnaker.io/replace: 'true'
   # health:
   #   enabled: true
-  # admissionController:
+  admissionController:
+    replicaCount: 2
   #   rbac:
   #     create: true
   #   serviceAccount:
