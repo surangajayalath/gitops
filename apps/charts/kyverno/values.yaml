@@ -1,9 +1,12 @@
 kyverno:
   installCRDs: true
   crds:
+    install: true
+    reportsServer:
+      enabled: true
     annotations: 
       argocd.argoproj.io/sync-options: Replace=true
-      strategy.spinnaker.io/replace: 'true'
+      strategy.spinnaker.io/replace: 'true''
 # Cleanup controller configuration
 # cleanupController:
 #   enabled: true
